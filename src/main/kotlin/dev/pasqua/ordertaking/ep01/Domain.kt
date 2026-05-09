@@ -1,4 +1,4 @@
-package dev.pasqua.ordertaking
+package dev.pasqua.ordertaking.ep01
 
 // ─────────────────────────────────────────────
 // Ep 03 — Pensar em Tipos: do F# para Kotlin
@@ -41,7 +41,7 @@ value class OrderQuantity private constructor(val value: Int) {
     }
 }
 
-sealed class ProductCode {
-    @JvmInline value class Widget(val value: String) : ProductCode()
-    @JvmInline value class Gizmo(val value: String) : ProductCode()
+sealed interface ProductCode {
+    @JvmInline value class Widget(val value: String) : ProductCode
+    @JvmInline value class Gizmo(val value: String) : ProductCode
 }
